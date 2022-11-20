@@ -1,0 +1,232 @@
+@font-face {
+    font-family: MaShanZheng;
+    src: url(../assets/MaShanZheng-Regular.ttf);
+}
+
+/* entire page */
+body {
+    background-image: url("../assets/bg.jpg");
+    background-color: transparent;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
+/* title */
+header {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+
+    text-align: center;
+    font-size: 20px;
+    font-family: MaShanZheng;
+}
+
+/* new game button */
+#newGameButton {
+    display: block;
+    margin: 20px auto;
+    width: 100px;
+    padding: 10px 10px;
+    background-color: #496b61;
+    font-family: MaShanZheng;
+    color:white;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+}
+
+#newGameButton:hover{
+    background-color: #4c5749;
+    border-color: #4c5749;
+    transition: 0.3s;
+    box-shadow: 0 0.5em 0.5em -0.4em #4c5749;
+    transform: translateY(-0.1em);
+    cursor:pointer;
+}
+
+/* game board */
+#gameBoard{
+    width: 900px;
+    position:relative;
+    margin: auto;
+}
+
+#scoreDiv{
+    font-family: MaShanZheng;
+    text-align: right;
+}
+
+#info, #win, #canvas {
+    width: 900px;
+    height: 550px;
+    padding: 10px;
+    margin:10px auto;
+    /* background-color: rgb(138, 161, 145, 0.8); */
+    background-color: rgb(204, 217, 208, 0.5);
+    border-radius: 10px;
+    position:relative;
+}
+
+.infoTitle{
+    font-family: MaShanZheng;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 5%;
+}
+
+.infoContent{
+    font-family: MaShanZheng;
+    font-size: 25px;
+    margin-top: 2%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+#cardsTable{
+    display: table;
+    border-spacing: 25px;
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+.cardsArray{
+    display: table-cell;
+    width: 90px;
+    height: 330px;
+    padding: 0px 10px 10px 10px;
+    margin: auto;
+    border-radius: 7px;
+}
+
+.card{
+    font-family: MaShanZheng;
+    position: absolute;
+    width: 70px;
+    height: 110px;
+    padding: 5px;
+    border-radius: 4px;
+    margin-left: 5px;
+    /* border */
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    border-color:#aaa36e;
+}
+
+#card0-8:hover, #card1-8:hover, #card2-8:hover, #card3-8:hover, #card4-8:hover, #card5-8:hover, #hand1:hover, #hand2:hover, #pileCards:hover{
+    transition: 0.3s;
+    box-shadow: 0 0.5em 0.5em -0.4em #4c5749;
+    transform: translateY(-0.1em);
+    cursor:pointer;
+}
+
+#cardsPool{
+    display: block;
+    width: 900px;
+    padding: 20px 10px 10px 10px;
+}
+
+#pileCards{
+    font-family: MaShanZheng;
+    position: absolute;
+    width: 70px;
+    height: 110px;
+    padding: 5px;
+    border-radius: 4px;
+    margin-left: 63px;
+    background-image: url("../assets/card_back.jpg");
+    background-size: 80px 120px;
+    text-align: center;
+}
+
+.pilesText{
+    position: absolute;
+    top: 35%;
+    left: 27%;
+    font-size: 40px;
+}
+
+#handCards{
+    font-family: MaShanZheng;
+    display: flex;
+    position: absolute;
+    width: 300px;
+    height: 120px;
+    /* text-align: center; */
+    margin-left: 340px;
+}
+
+#hand1{
+    display: inline-block;
+    margin-left: 0px;
+    width: 70px;
+    height: 110px;
+    padding: 5px;
+    background-color: #40554f;
+    background-image: url("../assets/card.jpg");
+    background-size: 80px 120px;
+    /* border */
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    border-color:#908958;
+    /* text */
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+}
+
+#hand2{
+    display: inline-block;
+    margin-left: 30px;
+    width: 70px;
+    height: 110px;
+    padding: 5px;
+    background-color: #40554f;
+    background-image: url("../assets/card.jpg");
+    background-size: 80px 120px;
+    /* border */
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    border-color:#908958;
+    /* text */
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+}
+
+.text{
+    position: absolute;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    margin-right: 10px;
+    margin-top: 3px;
+    margin-bottom: 10px;
+    font-size: 22px;
+    line-height: 25px;
+}
+
+#winTitle{
+    margin-top: 20%;
+}
+
+#scoreContent{
+    font-family: MaShanZheng;
+    font-size: 22px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+#footer{
+    width: 900px;
+    position:relative;
+    margin: auto;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 15px;
+}
+
+#weiboLink{
+    text-decoration: none;
+    color: #252e2c;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>薛氏翻花笺</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="jquery-3.6.1.min.js"></script>
+    <script type="text/javascript" src="display_helper.js"></script>
+    <script type="text/javascript" src="cards_helper.js"></script>
+    <script type="text/javascript" src="general_mode.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+</head>
+<body>
+    <header>
+        <h1>《墨魂》薛氏翻花笺</h1>
+    </header>
+    <div>
+        <a href="javascript:newGame();" id="newGameButton">翻花开始</a>
+    </div>
+
+    <div id="gameBoard">
+        <div id="scoreDiv">
+            本局得筹：<span id="score">0</span>
+        </div>
+        <div id="info">
+            <div id="infoTitle" class="infoTitle">游戏说明</div>
+            <div class="infoContent">一、点击任意2张同句或上下句花笺，可消除花笺并得筹。</div>
+            <div class="infoContent">二、除104张普通花笺外，每局还有4张追鹅笺（王羲之写的呢），可与任意其他花笺进行消除。</div>
+            <div class="infoContent">三、点击带有数字的笺纸背面，可翻开2张花笺覆盖当前手牌，直至数字归0。</div>
+            <div class="infoContent">四、满足如下条件之一则单局游玩结束：初始明笺全部消除；笺纸背面归0且没有可对应消除的花笺。</div>
+            <div class="infoContent">五、单次基础得筹10分，若连续消除成功，单次得筹每10分递增。</div>
+            <div class="infoContent">六、本网页的制作仅为个人娱乐行为，与官方无关。请多多支持《墨魂》正版游戏！</div>
+        </div>
+        <div id="win">
+            <div id="winTitle" class="infoTitle">翻花终了</div>
+            <div id="scoreContent">本局得筹：<span id="totalScore">0</span></div>
+        </div>
+        <div id="canvas">
+            <div id="cardsTable"></div>
+            <div id="cardsPool">
+                <div id="pileCards">
+                    <div class="pilesText" id="pilesText">
+                    </div>
+                </div>
+                <div id="handCards">
+                    <div id="hand1">
+                        <div class="text" id="text1">
+                        </div>
+                    </div>
+                    <div id="hand2">
+                        <div class="text" id="text2">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<footer id="footer">制作者：花间酒 微博ID: <a href="https://weibo.com/u/6236258532" id="weiboLink">FantasiaInDMinor</a></footer>
+</html>
