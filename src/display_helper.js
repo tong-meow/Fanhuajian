@@ -1,8 +1,12 @@
+/* DISPLAY_HELPER DOES MOST DYNAMIC DISPLAYING STUFF */
+
 function setHowToPlayBoard(){
     const canvasDiv = document.getElementById("canvas");
     canvasDiv.style.display = "none";
     const winningDiv = document.getElementById("win");
     winningDiv.style.display = "none";
+    const stepDiv = document.getElementById("stepScore");
+    stepDiv.style.display = "none";
 }
 
 function setCardBoard(){
@@ -223,4 +227,30 @@ function displayWinningPage(totalScore){
     winningDiv.style.display = "block";
     // display total score
     $("#totalScore").text(totalScore);
+}
+
+function showStepScore(stepScore) {
+    const stepDiv = document.getElementById("stepScore");
+    stepDiv.style.display = "block";
+    $("#step").text(stepScore);
+
+    let marginTop = 60;
+
+    var fadeEffect = setInterval(function () {
+        if (!stepDiv.style.opacity) {
+            stepDiv.style.opacity = 1;
+        }
+        if (stepDiv.style.opacity > 0) {
+            let top = marginTop.toString() + "px";
+            marginTop -= 3;
+            $(stepDiv).css("margin-top", top);
+            stepDiv.style.opacity -= 0.1;
+        } else {
+            clearInterval(fadeEffect);
+            // $(stepDiv).css("opacity", "1");
+            stepDiv.style.opacity = 1;
+            $(stepDiv).css("margin-top", "60px");
+            stepDiv.style.display = "none";
+        }
+    }, 50);
 }

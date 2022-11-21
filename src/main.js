@@ -19,6 +19,15 @@ var pileRemain = 54; // remaining cards track
 var totalScore = 0;
 var stepScore = 10; // score of the current step
 
+// Display helper
+var delay = ( function() {
+    var timer = 0;
+    return function(callback, ms) {
+        clearTimeout (timer);
+        timer = setTimeout(callback, ms);
+    };
+})();
+
 
 //////////////////////////////////////////////////////////////////
 $(document).ready(function() {
@@ -40,14 +49,15 @@ function newGame(){
     // display the game canvas
     const canvasDiv = document.getElementById("canvas");
     canvasDiv.style.display = "block";
-    // generate a new card pool and deck
+    // generate a new card pool and a deck
     pool = setGeneralModePool();
+    pool = shufflePool(pool);
     pool = shufflePool(pool);
     deck = generateDeck();
     pile = generatePile();
-    // display deck and pile and 2 hand cards
+    // display deck
     displayDeck(deck);
-    // put 2 cards in pile into hand cards array
+    // put 2 cards in pile into hand cards array, display hand cards
     getTwoHandCards();
 }
 
@@ -59,7 +69,6 @@ function clearAll(){
     hand2Cards = new Array();
     resetGameBoard();
     resetGame();
-    // clearListner();
 }
 
 function resetGame(){
@@ -86,7 +95,9 @@ function getTwoHandCards(){
     if (pileRemain == 0) {
         let isWin = checkWinningStatus();
         if (isWin) {
-            displayWinningPage(totalScore);
+            delay(function(){
+                displayWinningPage(totalScore);
+            }, 1000 );
         }
     }
 }
@@ -173,6 +184,7 @@ function checkPair() {
         (card1.number == card2.number) ){
         // add score
         totalScore += stepScore;
+        showStepScore(stepScore);
         stepScore += 10;
         updateScore(totalScore);
         // cancel highlight
@@ -187,7 +199,9 @@ function checkPair() {
         // check winning status
         let isWin = checkWinningStatus();
         if (isWin) {
-            displayWinningPage(totalScore);
+            delay(function(){
+                displayWinningPage(totalScore);
+            }, 1000 );
         }
     }
     else {
@@ -265,7 +279,6 @@ function checkWinningStatus(){
             let card = getCardFromId("#card"+col+"-8");
             if (card != undefined) remains.push(card);
         }
-        console.log("Get all the cards available: " + remains);
         // if there is only 0 or 1 card left, win
         if (remains.length == 0 || remains.length == 1) return true;
         // check if any two are a pair

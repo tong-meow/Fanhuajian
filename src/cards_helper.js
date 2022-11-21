@@ -1,3 +1,5 @@
+/* CARDS_HELPER HANDLES DECK AND PILE */
+
 function getRandomIndex(max){
     var result = new Set();
     for(var i = 0; i < 13; i++){

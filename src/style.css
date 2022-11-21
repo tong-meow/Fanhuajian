@@ -46,6 +46,15 @@ header {
     cursor:pointer;
 }
 
+#stepScore{
+    font-family: MaShanZheng;
+    position: absolute;
+    width: auto;
+    margin-top: 60px;
+    margin-left: 70%;
+    z-index: 20;
+}
+
 /* game board */
 #gameBoard{
     width: 900px;
@@ -204,7 +213,7 @@ header {
     margin-top: 3px;
     margin-bottom: 10px;
     font-size: 22px;
-    line-height: 25px;
+    line-height: 24px;
 }
 
 #winTitle{
@@ -229,4 +238,9 @@ header {
 #weiboLink{
     text-decoration: none;
     color: #252e2c;
+}
+
+#weiboLink:hover {
+    transition: 0.3s;
+    color: #908958;
 }
