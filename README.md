@@ -9,7 +9,7 @@
 
 ### 二、网页游玩
 
-1. Vercel: https://tong-meow-github-io.vercel.app/
+1. Vercel: https://tong-meow-github-io.vercel.app/ (已不可用）
 2. GitHub Pages: https://tong-meow.github.io/
 
 
